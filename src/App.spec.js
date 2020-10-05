@@ -19,6 +19,9 @@ describe("App", () => {
     wrapper.find("input[type='text']").getDOMNode().value = "Luke Skywalker";
     wrapper.find("input[type='submit]").last().simulate("click");
     expect(wrapper.find("table")).toHaveLength(1);
-    expect(wrapper.find("table thead th td").last().text()).toEqual("Luke");
+    expect(wrapper.find("table thead th td").last().text()).toEqual(
+      "Luke Skywalker"
+    );
+    expect(wrapper.find("table tbody tr")).toHaveLength(5);
   });
 });
